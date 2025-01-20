@@ -46,4 +46,5 @@ let arrayDays = myDays.split(",");
 console.log(arrayDays);
 for (const element of arrayDays) {
   console.log(element);
+  //console.log(...element);
 }
