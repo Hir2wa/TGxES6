@@ -14,7 +14,6 @@ let type = "quartz";
 let color = "rose";
 let carat = 21.29;
 
-// here there is some repetition
 const gemstone = {
   type: type,
   color: color,
