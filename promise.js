@@ -23,7 +23,7 @@ myPromise
    
 
     const mySundaePromise = new Promise(function(resolve, reject) {
-        window.setTimeout(function createSundae(flavor = 'chocolate') {
+        setTimeout(function createSundae(flavor = 'chocolate') {
             const sundae = {
                 flavor: flavor,
                 cone: true,
