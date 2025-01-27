@@ -54,18 +54,31 @@ myPromise
 
 
 
+
+
+
         function thePromise(){
             return  new Promise((resolve,reject)=>{
-
+      
           setTimeout((name)=>{
 
-        console.log(`  Hello ${name}`)         
+         resolve(`  Hello ${name}`)         
 
           },1000)
-  })
+          })
         }
 
 
 
-        //  we  gona   consume the promise 
+      
         
+   
+        thePromise('Alain')
+        .then(give =>  {
+            console.log(give);
+            
+        })
+        .catch(error=>{
+            console.log("Error:" , error);
+            
+        })
