@@ -51,3 +51,21 @@ myPromise
             console.error(error);
         });
     
+
+
+
+        function thePromise(){
+            return  new Promise((resolve,reject)=>{
+
+          setTimeout((name)=>{
+
+        console.log(`  Hello ${name}`)         
+
+          },1000)
+  })
+        }
+
+
+
+        //  we  gona   consume the promise 
+        
