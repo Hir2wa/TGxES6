@@ -21,3 +21,33 @@ myPromise
 
 
    
+
+    const mySundaePromise = new Promise(function(resolve, reject) {
+        window.setTimeout(function createSundae(flavor = 'chocolate') {
+            const sundae = {
+                flavor: flavor,
+                cone: true,
+                iceCream: true
+            };
+            
+           
+            const iceCreamConeIsEmpty = (flavor) => flavor === 'strawberry';  // Example: strawberry is out of stock
+            
+           
+            if (iceCreamConeIsEmpty(flavor)) {
+                reject(`Sorry, we're out of ${flavor} flavor :-(`);
+            } else {
+                resolve(sundae);
+            }
+        }, Math.random() * 2000);  
+    });
+    
+ 
+    mySundaePromise
+        .then(sundae => {
+            console.log(`Sundae ready with ${sundae.flavor} ice cream!`);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    
