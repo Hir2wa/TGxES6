@@ -91,7 +91,17 @@
             })
           }
 
+          
 
+          function getWeather( weather){
+            return new Promise(function(resolve,reject){
+           reject(' sunny ')
+
+            })
+          }
+
+
+          
           const weatherPromise =getWeather()
 
           weatherPromise.then(function(data){
@@ -102,3 +112,37 @@
             function(error){
               console.log(`   hello ${error}`)
           })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          function checkNumber(num) {
+            return new Promise(function(resolve, reject) {
+              setTimeout(function() {
+                if (num > 0) {
+                  resolve("Positive number!"); 
+                } else {
+                  reject("Number is not positive!"); 
+                }
+              }, 1000); 
+            });
+          }
+          
+        
+          checkNumber(5)
+            .then(function(result) {
+              console.log(result); 
+            })
+            .catch(function(error) {
+              console.log(error); 
+            });
