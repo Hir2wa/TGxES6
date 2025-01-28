@@ -1,55 +1,55 @@
-const myPromise = new Promise((resolve, reject) => {
+// const myPromise = new Promise((resolve, reject) => {
     
-    setTimeout(() => {
-        const success = true; 
-        if (success) {
-            resolve("Operation succeeded!");
-        } else {
-            reject("Operation failed.");
-        }
-    }, 1000);
-});
+//     setTimeout(() => {
+//         const success = true; 
+//         if (success) {
+//             resolve("Operation succeeded!");
+//         } else {
+//             reject("Operation failed.");
+//         }
+//     }, 1000);
+// });
 
 
-myPromise
-    .then(result => {
-        console.log(result); 
-    })
-    .catch(error => {
-        console.error(error); 
-    });
+// myPromise
+//     .then(result => {
+//         console.log(result); 
+//     })
+//     .catch(error => {
+//         console.error(error); 
+//     });
 
 
    
 
-    const mySundaePromise = new Promise(function(resolve, reject) {
-        setTimeout(function createSundae(flavor = 'chocolate') {
-            const sundae = {
-                flavor: flavor,
-                cone: true,
-                iceCream: true
-            };
+//     const mySundaePromise = new Promise(function(resolve, reject) {
+//         setTimeout(function createSundae(flavor = 'chocolate') {
+//             const sundae = {
+//                 flavor: flavor,
+//                 cone: true,
+//                 iceCream: true
+//             };
             
            
-            const iceCreamConeIsEmpty = (flavor) => flavor === 'strawberry';  // Example: strawberry is out of stock
+//             const iceCreamConeIsEmpty = (flavor) => flavor === 'strawberry';  // Example: strawberry is out of stock
             
            
-            if (iceCreamConeIsEmpty(flavor)) {
-                reject(`Sorry, we're out of ${flavor} flavor :-(`);
-            } else {
-                resolve(sundae);
-            }
-        }, Math.random() * 2000);  
-    });
+//             if (iceCreamConeIsEmpty(flavor)) {
+//                 reject(`Sorry, we're out of ${flavor} flavor :-(`);
+//             } else {
+//                 resolve(sundae);
+//             }
+//         }, Math.random() * 2000);  
+//     });
     
  
-    mySundaePromise
-        .then(sundae => {
-            console.log(`Sundae ready with ${sundae.flavor} ice cream!`);
-        })
-        .catch(error => {
-            console.error(error);
-        });
+//     mySundaePromise
+//         .then(sundae => {
+//             console.log(`Sundae ready with ${sundae.flavor} ice cream!`);
+//         })
+//         .catch(error => {
+//             console.error(error);
+//         });
     
 
 
@@ -57,29 +57,48 @@ myPromise
 
 
 
-        function thePromise(){
-            return  new Promise((resolve,reject)=>{
+//         function thePromise(){
+//             return  new Promise((resolve,reject)=>{
       
-          setTimeout((name)=>{
+//           setTimeout((name)=>{
 
-         resolve(`  Hello ${name}`)         
+//          resolve(`  Hello ${name}`)         
 
-          },1000)
-          })
-        }
+//           },1000)
+//           })
+//         }
 
 
 
       
         
    
-        thePromise('Alain')
-        .then(give =>  {
-            console.log(give);
+//         thePromise('Alain')
+//         .then(give =>  {
+//             console.log(give);
             
-        })
-        .catch(error=>{
-            console.log("Error:" , error);
+//         })
+//         .catch(error=>{
+//             console.log("Error:" , error);
             
-        })
-    // hello
+//         })
+   
+
+          function getWeather(){
+            return new Promise(function(resolve,reject){
+           reject(' sunny ')
+
+            })
+          }
+
+
+          const weatherPromise =getWeather()
+
+          weatherPromise.then(function(data){
+            console.log(data)
+            
+          } )
+          .catch(
+            function(error){
+              console.log(`   hello ${error}`)
+          })
