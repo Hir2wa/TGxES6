@@ -86,25 +86,52 @@
 
           function getWeather(){
             return new Promise(function(resolve,reject){
-           reject(' sunny ')
+
+
+                 setTimeout(function(){
+
+                    reject(' sunny ')
+                 },1000)
+         
 
             })
           }
 
           
-
-          function getWeather( weather){
+          function getWeather(weather){
             return new Promise(function(resolve,reject){
-           reject(' sunny ')
+
+
+                 setTimeout(function(){
+
+                  switch (weather) {
+                    case 'sunny':
+                        resolve('sunny imoji')
+                        
+                        break;
+                      case 'cloudy':
+                        resolve('cloudy imoji')
+                        break;
+                    default:
+                        reject(' no imoji  found');
+                        break;
+                  }
+
+                 },1000) 
 
             })
           }
 
+            
 
-          
+
+
           const weatherPromise =getWeather()
 
-          weatherPromise.then(function(data){
+          weatherPromise.then
+          ( getWeather(),
+          
+            function(data){
             console.log(data)
             
           } )
