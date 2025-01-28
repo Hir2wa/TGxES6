@@ -84,65 +84,52 @@
 //         })
    
 
-          function getWeather(){
-            return new Promise(function(resolve,reject){
-
-
-                 setTimeout(function(){
-
-                    reject(' sunny ')
-                 },1000)
-         
-
-            })
-          }
-
-          
-          function getWeather(weather){
-            return new Promise(function(resolve,reject){
-
-
-                 setTimeout(function(){
-
-                  switch (weather) {
-                    case 'sunny':
-                        resolve('sunny imoji')
-                        
-                        break;
-                      case 'cloudy':
-                        resolve('cloudy imoji')
-                        break;
-                    default:
-                        reject(' no imoji  found');
-                        break;
-                  }
-
-                 },1000) 
-
-            })
-          }
+     
+function getWeather() {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        const weather = 'sunny'; 
+        if (weather) {
+          resolve(weather); 
+          reject('No weather data found'); 
+        }
+      }, 1000);
+    });
+  }
+  
+  
+  function getWeatherEmoji(weather) {
+    return new Promise(function(resolve, reject) {
+      setTimeout(function() {
+        switch (weather) {
+          case 'sunny':
+            resolve('☀️ sunny imoji');
+            break;
+          case 'cloudy':
+            resolve('☁️ cloudy imoji');
+            break;
+          default:
+            reject('❌ no imoji found');
+            break;
+        }
+      }, 1000);
+    });
+  }
+  
+  // Chain the Promises
+  getWeather()
+    .then(function(weather) {
+      console.log('Weather condition:', weather);
+      return getWeatherEmoji(weather); 
+    })
+    .then(function(emoji) {
+      console.log('Weather emoji:', emoji);
+    })
+    .catch(function(error) {
+      console.log('Error:', error);
+    });
 
             
-
-
-
-          const weatherPromise =getWeather()
-
-          weatherPromise.then
-          ( getWeather(),
-          
-            function(data){
-            console.log(data)
-            
-          } )
-          .catch(
-            function(error){
-              console.log(`   hello ${error}`)
-          })
-
-
-
-
 
 
 
