@@ -116,7 +116,7 @@ function getWeather() {
     });
   }
   
-  // Chain the Promises
+
   getWeather()
     .then(function(weather) {
       console.log('Weather condition:', weather);
