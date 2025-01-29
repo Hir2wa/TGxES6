@@ -103,13 +103,13 @@ function getWeather() {
       setTimeout(function() {
         switch (weather) {
           case 'sunny':
-            resolve('☀️ sunny imoji');
+            resolve(' sunny imoji');
             break;
           case 'cloudy':
-            resolve('☁️ cloudy imoji');
+            resolve(' cloudy imoji');
             break;
           default:
-            reject('❌ no imoji found');
+            reject(' no imoji found');
             break;
         }
       }, 1000);
