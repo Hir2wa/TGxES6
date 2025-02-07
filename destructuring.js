@@ -21,3 +21,12 @@ const gemstone = {
 };
 
 console.log(gemstone);
+
+
+function printFirstTwo([first, second]) {
+  console.log(`First: ${first}, Second: ${second}`);
+}
+
+const numbers = [10, 20, 30, 40];
+
+printFirstTwo(numbers);  
