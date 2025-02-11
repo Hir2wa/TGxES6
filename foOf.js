@@ -46,24 +46,26 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-// Function to remove vowels from a name
+
 function removeVowels(name) {
-    const vowels = ['a', 'e', 'i', 'o', 'u']; // List of vowels to remove
+    const vowels = ['a', 'e', 'i', 'o', 'u']; 
     let result = '';
 
     for (let char of name) {
         if (!vowels.includes(char.toLowerCase())) {
-            result += char; // Add the character to result if it's not a vowel
+            result += char; 
         }
     }
 
     return result;
 }
 
-// Ask the user to enter their name
+
 rl.question("Enter your name: ", function(name) {
     let nameWithoutVowels = removeVowels(name);
     console.log("Name without vowels:", nameWithoutVowels);
     
-    rl.close(); // Close the readline interface
+    rl.close(); 
 });
+
+
