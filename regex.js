@@ -22,3 +22,9 @@ function dup(s) {
       }
     });
   }
+
+
+  const regexx = /(\d+)([a-zA-Z]*)/;
+const str = "3hey5hello2hi";
+const match = regexx.exec(str);
+console.log(match);
