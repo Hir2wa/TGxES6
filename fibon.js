@@ -14,7 +14,8 @@
 
  function* rotate(str) {
     let newSet = new Set(); 
-    for (let i = 0; i < str.length; i++) {
+    //for (let i = 0; i < str.length; i++) {
+        for (let _ of Array(str.length).keys()) { 
       str = str.slice(1) + str[0]; 
       newSet.add(str); 
       yield str; 
