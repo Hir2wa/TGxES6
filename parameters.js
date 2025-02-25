@@ -25,3 +25,16 @@ console.log(average());
 // Prototype Chain:
 
 // If you access a property/method on an object and it doesn't exist, JavaScript looks up the prototype chain to find it.
+
+class name {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  display() {
+    `Hello ${name} Your  Age ${this.age}`;
+  }
+}
+
+let namee = name();
