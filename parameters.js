@@ -54,9 +54,17 @@ console.log(
 );
 
 //  by using  reduce
-function objArray(arr) {
+function oobjArray(arr) {
   return arr.reduce((acc, { id, name }) => {
     acc[id] = name;
     return acc;
   }, {});
 }
+
+console.log(
+  oobjArray([
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ])
+);
