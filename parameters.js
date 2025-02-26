@@ -37,4 +37,26 @@ class name {
   }
 }
 
-let namee = name();
+function objArray(arr) {
+  let myobj = {};
+  for (const { id, name } of arr) {
+    myobj[id] = name;
+  }
+  return myobj;
+}
+
+console.log(
+  objArray([
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ])
+);
+
+//  by using  reduce
+function objArray(arr) {
+  return arr.reduce((acc, { id, name }) => {
+    acc[id] = name;
+    return acc;
+  }, {});
+}
