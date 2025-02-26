@@ -68,3 +68,17 @@ console.log(
     { id: 3, name: "Charlie" },
   ])
 );
+
+function mapArray(arr) {
+  return arr
+    .filter(([name, age]) => age > 18)
+    .map(([name, age]) => ({ [name]: age }));
+}
+
+const people = [
+  ["Alice", 25],
+  ["Bob", 17],
+  ["Charlie", 30],
+];
+
+console.log(mapArray(people));
