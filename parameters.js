@@ -25,3 +25,60 @@ console.log(average());
 // Prototype Chain:
 
 // If you access a property/method on an object and it doesn't exist, JavaScript looks up the prototype chain to find it.
+
+class name {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  display() {
+    `Hello ${name} Your  Age ${this.age}`;
+  }
+}
+
+function objArray(arr) {
+  let myobj = {};
+  for (const { id, name } of arr) {
+    myobj[id] = name;
+  }
+  return myobj;
+}
+
+console.log(
+  objArray([
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ])
+);
+
+//  by using  reduce
+function oobjArray(arr) {
+  return arr.reduce((acc, { id, name }) => {
+    acc[id] = name;
+    return acc;
+  }, {});
+}
+
+console.log(
+  oobjArray([
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" },
+  ])
+);
+
+function mapArray(arr) {
+  return arr
+    .filter(([name, age]) => age > 18)
+    .map(([name, age]) => ({ [name]: age }));
+}
+
+const people = [
+  ["Alice", 25],
+  ["Bob", 17],
+  ["Charlie", 30],
+];
+
+console.log(mapArray(people));

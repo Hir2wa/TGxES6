@@ -38,34 +38,34 @@ console.log(gen.next()); // Logs: "First yield", { value: 1, done: false }
 console.log(gen.next()); // Logs: "Second yield", { value: 2, done: false }
 console.log(gen.next()); // Logs: "Done!", { value: 3, done: true }
 
-const readline = require('readline');
+const readline = require("readline");
 
 // Create an interface to read input from the user
 const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
+  input: process.stdin,
+  output: process.stdout,
 });
-
 
 function removeVowels(name) {
-    const vowels = ['a', 'e', 'i', 'o', 'u']; 
-    let result = '';
+  const vowels = ["a", "e", "i", "o", "u"];
+  let result = "";
 
-    for (let char of name) {
-        if (!vowels.includes(char.toLowerCase())) {
-            result += char; 
-        }
+  for (let char of name) {
+    if (!vowels.includes(char.toLowerCase())) {
+      result += char;
     }
+  }
 
-    return result;
+  return result;
 }
 
+rl.question("Enter your name: ", function (name) {
+  let nameWithoutVowels = removeVowels(name);
+  console.log("Name without vowels:", nameWithoutVowels);
 
-rl.question("Enter your name: ", function(name) {
-    let nameWithoutVowels = removeVowels(name);
-    console.log("Name without vowels:", nameWithoutVowels);
-    
-    rl.close(); 
+  rl.close();
 });
 
-
+for (const _ of Array(6)) {
+  console.log("Hello World!!");
+}
